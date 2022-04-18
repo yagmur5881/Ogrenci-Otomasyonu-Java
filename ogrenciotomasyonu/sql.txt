@@ -1,0 +1,312 @@
+create table  bolumtlb (
+bolumıd int not null ,
+bolumadı varchar(30),
+	primary key (bolumıd)
+)
+select * from bolumtlb
+
+create table derstlb (
+dersıd int not null ,
+dersadı varchar(30),
+ogretmenıd int,
+	bolumıd int,
+	primary key (dersıd)
+)
+select from derstlb
+create table ogretmentlb (
+ogretmenıd int not null ,
+adı varchar(30),
+soyadı varchar(30),
+donem varchar(30),
+	primary key (ogretmenıd)
+)
+select * from ogretmentlb
+
+create table ogrnderstlb(
+ogrnddersıd int not null,
+dersıd int ,
+donemıd int,
+	primary key (ogrnddersıd)
+)
+select * from ogrnderstlb
+
+create table ogrntlb (
+ogrnıd int not null ,
+adı varchar(30),
+soyadı varchar(30),
+bolumıd int,
+
+	primary key (ogrnıd)
+)
+select * from  ogrntlb
+
+create table ogrnottlb (
+ogrnnotıd int not null ,
+dersıd int,
+vize int,
+final int,
+bütünleme int ,
+	primary key (ogrnnotıd)
+	)
+	select*from ogrntlb
+	
+)
+create table donemtlb (
+donemıd int not null ,
+donem varchar(30),
+	primary key (donemıd)
+)
+select *from donemtlb
+
+insert into ogrnottlb (ogrnnotıd,dersıd,vize,final,bütünleme)
+values
+(1,2,90,40,30),
+(2,3,40,20,30),
+(3,4,20,80,30),
+(4,5,80,40,30),
+(5,6,90,40,10),
+(6,7,20,60,30),
+(7,8,70,80,30),
+(8,9,40,60,40),
+(9,10,50,40,60),
+(10,11,40,80,30),
+(11,12,90,60,30),
+(12,13,20,10,30),
+(13,14,40,70,50),
+(14,15,70,40,70),
+(15,16,70,60,30),
+(16,17,50,40,30),
+(17,18,40,20,30),
+(18,19,40,60,30),
+(19,20,50,70,30),
+(20,21,10,60,30)
+select * from ogrnottlb 
+
+
+insert into bolumtlb (bolumıd,bolumadı)
+values(3,'matematik'),
+(4,'türkce'),
+(5,'biyoloji'),
+(6,'sosyal bilgiler'),
+(7,'kimya'),
+(8,'geometri'),
+(9,'bilgisayar programcılıgı'),
+(10,'tıp'),
+(11,'biyomedikal'),
+(12,'hukuk'),
+(13,'biroyönetim'),
+(14,'denizcilik'),
+(15,'askeri eğitim'),
+(16,'hackerlık'),
+(17,'cocuk gelişim'),
+(18,'eğitim fakültesi '),
+(19,'böte'),
+(20,'hemşeri'),
+(21,'tiyatro')
+select *from bolumtlb
+
+insert into derstlb (bolumıd,dersadı,dersıd,ogretmenıd)
+values(3,'matematik',2,1),
+(4,'türkce',3,2),
+(5,'biyoloji',4,3),
+(6,'sosyal bilgiler',5,4),
+(7,'kimya',6,5),
+(8,'geometri',7,6),
+(9,'bilgisayar programcılıgı ',8,7),
+(10,'tıp',9,8),
+(11,'biyomedikal',10,9),
+(12,'hukuk',11,10),
+(13,'biroyönetim',12,11),
+(14,'denizcilik',13,12),
+(15,'askeri eğitim',14,13),
+(16,'hackerlık',15,14),
+(17,'cocuk gelişim',16,15),
+(18,'eğitim fakültesi ',17,16),
+(19,'böte',18,17),
+(20,'hemşeri',21,18),
+(21,'tiyatro',22,19)
+select * from derstlb
+
+insert into ogretmentlb (ogretmenıd,adı,soyadı,bolumıd)
+values(1,'sabahattin','gozel',3),
+(2,'ismail','yeğit',4),
+(3,'hikmet','yağit',5),
+(4,'ayden','eydogan',6),
+(5,'aynur','nuru',7),
+(6,'elif','kalabulut',8),
+(7,'güldane','şisek',9),
+(8,'osman','erkan',10),
+(9,'hüseyin','irol',11),
+(11,'murat','çakar',12),
+(12,'hakan','imde',13),
+(13,'halise','nenteş',14),
+(14,'hatice','sütvü',15),
+(15,'sevdanur','guner',16),
+(16,'alirıza','yalmaz',17),
+(17,'yağmur','cülik',18),
+(18,'burcu','demir',19)
+select * from ogretmentlb
+insert into ogrnderstlb(ogrnddersıd,dersıd,donemıd)
+values
+(1,2,3),
+(2,3,4),
+(3,4,5),
+(4,5,6),
+(5,6,7),
+(6,7,8),
+(7,8,9),
+(8,9,10),
+(9,10,11), 
+(10,11,12),
+(11,12,13),
+(12,13,14),
+(13,14,15),
+(14,15,16),
+(15,16,17),
+(16,17,18),
+(17,18,19),
+(18,19,20),
+(19,20,21),
+(20,21,22),
+(21,22,23)
+select *from ogrnderstlb
+insert into ogrntlb (ogrnıd,adı,soyadı,bolumıd)
+values(1,'yağmur','yiğit',3),
+(2,'hilal','karabulut',4),
+(3,'afra','güzel',5),
+(4,'şura','yiğit',6),
+(5,'melek','yiğit',7),
+(6,'ayşenur','aydogan',8),
+(7,'ayşe','nur',9),
+(8,'irem','karabulut',10),
+(9,'gül','şişek',11),
+(10,'umut','arkan',12),
+(11,'hüseyin','erol',13),
+(12,'sedat','cakar',14),
+(13,'melike','ide',15),
+(14,'mğsemma','menteş',16),
+(15,'betül','sütcü',17),
+(16,'sibel','güner',18),
+(17,'emin','yılmaz',19),
+(18,'betül','celik',20),
+(19,'ayşe','demirgan',21),
+(20,'betül','kıbrıs',22)
+select * from ogrntlb
+insert into donemtlb(donemıd,donem)
+values
+(5,'gecti'),
+(6,'kaldı'),
+(7,'gecti'),
+(8,'kaldı'),
+(9,'kaldı'),
+(10,'gecti'),
+(11,'gecti'),
+(12,'kaldı'),
+(13,'kaldı'), 
+(14,'gecti'),
+(15,'kaldı'),
+(16,'gecti'),
+(17,'kaldı'),
+(18,'gecti'),
+(19,'kaldı'),
+(20,'gecti'),
+(21,'kaldı'),
+(22,'gecti'),
+(23,'kaldı'),
+(24,'gecti'),
+(25,'kaldı')
+select * from  donemtlb
+
+update bolumtlb
+set bolumadı='eşitmedikal'
+where bolumıd=19;
+select * from bolumtlb
+
+update ogretmentlb 
+set adı='aysel'
+where ogretmenıd=5;
+select * from ogretmentlb 
+
+update derstlb 
+set dersadı='ormancılık'
+where dersıd=4;
+select * from derstlb 
+
+update ogretmentlb 
+set adı='mert'
+where ogretmenıd=5;
+select * from ogretmentlb 
+
+update ogretmentlb 
+set soyadı ='derin'
+where ogretmenıd=5;
+select * from ogretmentlb 
+delete from ogretmentlb 
+where adı ='ali'
+select *from ogretmentlb 
+
+delete from derstlb
+where dersadı='kimya'
+select * from ogretmentlb
+
+delete from ogrnderstlb
+where soyadı ='arkan'
+select * from ogrnderstlb
+
+delete from ogrnderstlb
+where ad ='umut'
+select * from ogrnderstlb
+
+delete from dertlb 
+where dersadı='biyoloji'
+select * from derstlb
+
+
+
+
+
+----burada ilişkilendirmemi yapıyorum 
+select * from ogretmentlb 
+select * from derstlb
+select *
+from ogretmentlb,derstlb 
+where ogretmentlb.ogretmenıd = derstlb.dersıd
+
+select * from ogrntlb
+select * from ogrnderstlb
+select *
+from ogrntlb,ogrnderstlb 
+where ogrntlb.ogrnıd = ogrderstlb.ogrnıd
+
+select * from ogrntlb
+select * from ogrnottlb
+select *
+from ogrntlb,ogrnottlb 
+where ogrntlb.ogrnıd = ogrnottlb.ogrnıd
+
+select * from bolumtlb
+select * from ogrntlb
+select *
+from ogrntlb,bolumtlb
+where ogrntlb.bolumıd = bolumtlb.bolumıd
+
+
+select * from bolumtlb
+select * from derstlb
+select *
+from derstlb,bolumtlb
+where derstlb.bolumıd = bolumtlb.bolumıd
+
+select * from ogrnderstlb
+select * from derstlb
+select *
+from derstlb,ogrnderstlb
+where derstlb.dersıd = ogrnderstlb.dersıd
+
+select * from ogrnottlb
+select * from derstlb
+select *
+from derstlb,ogrnottlb
+where derstlb.dersıd = ogrnottlb.dersıd
+
+
